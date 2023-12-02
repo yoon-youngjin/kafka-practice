@@ -24,3 +24,9 @@ test {
 kotlin {
     jvmToolchain(8)
 }
+
+jar {
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
