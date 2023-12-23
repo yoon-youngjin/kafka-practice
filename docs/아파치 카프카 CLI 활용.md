@@ -150,6 +150,12 @@ key.separator를 선언하지 않으면 기본 설정은 Tab delimiter(\t)이므
 
 특정 토픽으로 전송한 데이터는 kafka-console-consumer.sh 명령어로 확인할 수 있다. 이때 필수 옵션으로 --bootstrap-server에 카프카 클러스터 정보, --topic에 토픽 이름이 필요하다. 추가로 --from-beginning 옵션을 주면 토픽에 저장된 가장 처음 데이터부터 출려한다.
 
+> auto.offset.reset = earliest : 처음 offset 부터 읽음
+> 
+> auto.offset.reset = latest : 마지막 offset 부터 읽음 (default)
+> 
+> --from-beginning을 사용해야만 auto.offset.reset이 ealiest로 지정된다. 
+
 ```text
 ./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic hello_kafka --from-beginning
 ```
