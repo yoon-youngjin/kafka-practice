@@ -27,6 +27,10 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging:1.5.9")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.springframework.kafka:spring-kafka:2.5.17.RELEASE")
+
+    implementation("io.confluent.parallelconsumer:parallel-consumer-core:0.5.2.7")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.3")
+    implementation("mysql:mysql-connector-java:8.0.33")
 }
 
 tasks.withType<KotlinCompile> {
